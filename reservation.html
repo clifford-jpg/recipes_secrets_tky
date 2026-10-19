@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Table | Recipe Secrets Restaurant</title>
+  <meta name="description" content="Reserve a table at Recipe Secrets Restaurant. Pick a date, time and party size and we'll confirm your booking." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="visually-hidden" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Recipe <span>Secrets</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="reservation.html" class="active" aria-current="page">Reservation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-header">
+      <div class="container">
+        <h1>Book a Table</h1>
+        <p>Fill in the form below and we'll confirm your reservation by email. For same-day bookings, please call us directly.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <!--
+          FORMSPREE SETUP: replace the form "action" URL below with your own
+          endpoint from https://formspree.io (e.g. https://formspree.io/f/abcdwxyz)
+        -->
+        <form
+          id="reservation-form"
+          class="form-card"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          data-success-message="Thank you! Your reservation request has been sent — we'll confirm by email shortly."
+          novalidate
+        >
+          <div class="form-row">
+            <div class="form-field">
+              <label for="res-name">Full Name <span class="required">*</span></label>
+              <input type="text" id="res-name" name="name" autocomplete="name" required />
+              <p class="field-error" role="alert">Please enter your name.</p>
+            </div>
+            <div class="form-field">
+              <label for="res-email">Email <span class="required">*</span></label>
+              <input type="email" id="res-email" name="email" autocomplete="email" required />
+              <p class="field-error" role="alert">Please enter a valid email address.</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="res-phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="res-phone" name="phone" autocomplete="tel" required />
+              <p class="field-error" role="alert">Please enter your phone number.</p>
+            </div>
+            <div class="form-field">
+              <label for="res-guests">Number of Guests <span class="required">*</span></label>
+              <input type="number" id="res-guests" name="guests" min="1" max="12" step="1" required />
+              <p class="field-hint">Parties larger than 12? Please call us directly.</p>
+              <p class="field-error" role="alert">Please enter a number of guests between 1 and 12.</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="res-date">Date <span class="required">*</span></label>
+              <input type="date" id="res-date" name="date" required />
+              <p class="field-error" role="alert">Please choose today or a future date.</p>
+            </div>
+            <div class="form-field">
+              <label for="res-time">Time <span class="required">*</span></label>
+              <input type="time" id="res-time" name="time" required />
+              <p class="field-hint">We're open 11:30am–10:00pm, Tue–Sun.</p>
+              <p class="field-error" role="alert">Please choose a time within opening hours.</p>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="res-requests">Special Requests</label>
+            <textarea id="res-requests" name="special_requests" placeholder="Allergies, celebrations, seating preferences…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Request Reservation</button>
+
+          <div id="reservation-message" class="form-message" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h3>Recipe Secrets Restaurant</h3>
+          <p>[ADDRESS]</p>
+          <p>Phone: <a href="tel:[PHONE]">[PHONE]</a></p>
+          <p>Email: <a href="mailto:[EMAIL]">[EMAIL]</a></p>
+        </div>
+        <div class="footer-col">
+          <h3>Opening Hours</h3>
+          <p>Tue–Sun 11:30am–10pm</p>
+          <p>Closed Mon</p>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <!-- PLACEHOLDER social links: replace href values with real profiles -->
+            <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.6 1.6-1.6h1.7V3.2C16.5 3.1 15.4 3 14.2 3c-2.6 0-4.4 1.6-4.4 4.5v2.3H7v3.2h2.8v8h3.7z"/></svg>
+            </a>
+            <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 .1 1.7.2 2.3.5.6.3 1.1.6 1.6 1.1.5.5.8 1 1.1 1.6.3.6.4 1.3.5 2.3.1 1 .1 1.3.1 4s0 3-.1 4c-.1 1-.2 1.7-.5 2.3-.3.6-.6 1.1-1.1 1.6-.5.5-1 .8-1.6 1.1-.6.3-1.3.4-2.3.5-1 .1-1.3.1-4 .1s-3 0-4-.1c-1-.1-1.7-.2-2.3-.5-.6-.3-1.1-.6-1.6-1.1-.5-.5-.8-1-1.1-1.6-.3-.6-.4-1.3-.5-2.3-.1-1-.1-1.3-.1-4s0-3 .1-4c.1-1 .2-1.7.5-2.3.3-.6.6-1.1 1.1-1.6.5-.5 1-.8 1.6-1.1.6-.3 1.3-.4 2.3-.5 1-.1 1.3-.1 4-.1zm0 1.8c-2.6 0-2.9 0-4 .1-.8 0-1.3.2-1.6.3-.4.1-.7.3-1 .6-.3.3-.5.6-.6 1-.1.3-.3.8-.3 1.6-.1 1.1-.1 1.4-.1 4s0 2.9.1 4c0 .8.2 1.3.3 1.6.1.4.3.7.6 1 .3.3.6.5 1 .6.3.1.8.3 1.6.3 1.1.1 1.4.1 4 .1s2.9 0 4-.1c.8 0 1.3-.2 1.6-.3.4-.1.7-.3 1-.6.3-.3.5-.6.6-1 .1-.3.3-.8.3-1.6.1-1.1.1-1.4.1-4s0-2.9-.1-4c0-.8-.2-1.3-.3-1.6-.1-.4-.3-.7-.6-1-.3-.3-.6-.5-1-.6-.3-.1-.8-.3-1.6-.3-1.1-.1-1.4-.1-4-.1zm0 3.3a4.7 4.7 0 110 9.4 4.7 4.7 0 010-9.4zm0 1.8a2.9 2.9 0 100 5.8 2.9 2.9 0 000-5.8zm5-2a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/></svg>
+            </a>
+            <a href="https://x.com" aria-label="X (Twitter)" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 3H22l-7.2 8.2L23 21h-6.6l-5.2-6.4L5.1 21H2l7.7-8.8L1.5 3h6.8l4.7 5.9L18.9 3zm-1.2 16.1h1.8L7.4 4.8H5.5l12.2 14.3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">&copy; <span id="year"></span> Recipe Secrets Restaurant. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
