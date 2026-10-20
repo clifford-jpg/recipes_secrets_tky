@@ -199,6 +199,17 @@ ul {
   border-bottom-color: var(--color-accent);
 }
 
+.nav a[href="reservation.html"] {
+  color: #e63946;
+}
+
+.nav a[href="reservation.html"]:hover,
+.nav a[href="reservation.html"]:focus-visible,
+.nav a[href="reservation.html"].active {
+  color: #ff4d5e;
+  border-bottom-color: #e63946;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
