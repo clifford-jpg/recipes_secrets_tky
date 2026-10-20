@@ -1,6 +1,6 @@
 # Recipes Secrets Website Requirements
 
-Build a simple, mobile-friendly website for "Recipe Secrets Restaurant".
+Build a simple, mobile-friendly website for "Secret Recipes Restaurant".
 
 ## Tech constraints
 - Plain HTML5, CSS3 and minimal vanilla JavaScript. No frameworks, no build step, no npm.

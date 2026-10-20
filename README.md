@@ -1,4 +1,4 @@
-# Recipe Secrets Restaurant — Website
+# Secret Recipes Restaurant — Website
 
 A simple, mobile-friendly, 5-page static website built with plain HTML5, CSS3 and vanilla JavaScript. No build step, no frameworks, no backend.
 
