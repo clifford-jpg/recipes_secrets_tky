@@ -162,7 +162,7 @@ ul {
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 3rem;
   color: var(--color-text);
   letter-spacing: 0.02em;
 }
